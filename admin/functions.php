@@ -1,4 +1,12 @@
 <?php 
+
+    function checkQuery($query){
+        global $connection;
+        if(!$query){
+            return die("QUERY FAILD " . mysqli_error($connection));
+        }
+    }
+
     function insertCategory(){
         global $connection;
         if(isset($_POST['submit'])){
@@ -9,9 +17,7 @@
                 $query = "INSERT INTO categories(cat_title) VALUE('{$cat_title}')";
                 $create_category_query = mysqli_query($connection, $query);
 
-                if(!$create_category_query){
-                    die('Query Faild'. mysqli_error($connection));
-                }
+                checkQuery($create_category_query);
             }
         }
     }
@@ -19,7 +25,7 @@
     function addCategory(){
         global $connection;
         $query = "SELECT * FROM categories";
-            $sellect_categories = mysqli_query($connection, $query);
+        $sellect_categories = mysqli_query($connection, $query);
 
         while ($row = mysqli_fetch_assoc($sellect_categories)) {
             $cat_id = $row["cat_id"];
