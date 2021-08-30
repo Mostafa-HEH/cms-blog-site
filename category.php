@@ -19,14 +19,18 @@
 
                 <!-- First Blog Post -->
                 <?php
-                    $query = "SELECT * FROM posts";
+                    if (isset($_GET['category'])){
+                        $category_id = $_GET['category'];
+                    }
+
+                    $query = "SELECT * FROM posts WHERE post_category_id = $category_id ";
                     $selec_posts = mysqli_query($connection, $query);
                     while ($row = mysqli_fetch_assoc($selec_posts)) {
                         $post_id = $row['post_id'];
                         $post_title = $row['post_title'];
                         $post_author = $row['post_author'];
                         $post_date = $row['post_date'];
-                        $post_content = substr($row['post_content'],0,200);
+                        $post_content = $row['post_content'];
                         $post_image = $row['post_image'];
 
                         
