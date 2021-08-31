@@ -68,7 +68,7 @@
         <input type="text" class="form-control" name="title" value="<?php echo $post_title; ?>">
     </div>
     <div class="form-group">
-        <select name="post_category" id="post_category">
+        <select class="form-control" name="post_category" id="post_category">
             <?php 
                  $query = "SELECT * FROM categories ";
                  $select_categories = mysqli_query($connection, $query);
@@ -90,7 +90,10 @@
     </div>
     <div class="form-group">
         <label for="title">Post Status</label>
-        <input type="text" class="form-control" name="post_status" value="<?php echo $post_status; ?>" >
+        <select class="form-control" name="post_status" value="<?php echo $post_status; ?>">
+                 <option <?php if($post_status == 'puplished') echo 'selected' ?> value="puplished" >puplished</option>
+                 <option <?php if($post_status == 'draft') echo 'selected' ?> value="draft" >draft</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="post_image">Post Image</label>
