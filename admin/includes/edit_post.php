@@ -91,7 +91,7 @@
     <div class="form-group">
         <label for="title">Post Status</label>
         <select class="form-control" name="post_status" value="<?php echo $post_status; ?>">
-                 <option <?php if($post_status == 'puplished') echo 'selected' ?> value="puplished" >puplished</option>
+                 <option <?php if($post_status == 'published') echo 'selected' ?> value="published" >published</option>
                  <option <?php if($post_status == 'draft') echo 'selected' ?> value="draft" >draft</option>
         </select>
     </div>
