@@ -54,23 +54,6 @@
         <label >randSalt</label>
         <input type="input" class="form-control" name="randSalt">
     </div>
-    <!-- <div class="form-group">
-        <select name="post_category" id="post_category"> -->
-            <?php 
-                //  $query = "SELECT * FROM categories ";
-                //  $select_categories = mysqli_query($connection, $query);
-
-                //  checkQuery($select_categories);
- 
-                //  while ($row = mysqli_fetch_assoc($select_categories)) {
-                //      $cat_id = $row["cat_id"];
-                //      $cat_title = $row["cat_title"]; 
-
-                //      echo "<option value='{$cat_id}'>$cat_title</option>";
-                //  }
-            ?>
-        <!-- </select>
-    </div> -->
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="add_user" value="Add User">
     </div>

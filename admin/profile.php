@@ -1,6 +1,27 @@
-<?php
-    if(isset($_GET['post_id'])){
-        $pram_post_id = $_GET['post_id'];
+<?php include 'includes/admin_header.php';?>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <?php include 'includes/admin_navigation.php'?>
+        
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Welcome to admin 
+                            <small><?php echo $_SESSION['firstname'] ?></small>
+                        </h1>
+
+                    </div>
+                </div>
+                <!-- /.row -->
+                <?php
+    if(isset($_SESSION['id'])){
+        $pram_post_id = $_SESSION['id'];
     }
 
     if(isset($_POST['update_user'])){
@@ -17,8 +38,7 @@
         move_uploaded_file($user_image_temp, "../images/$user_image");
 
         if(empty($usre_image)) {
-        
-            $query = "SELECT * FROM users WHERE user_id = $pram_post_id ";
+            $query = "SELECT * FROM users WHERE user_id = {$pram_post_id} ";
             $select_image = mysqli_query($connection,$query);
                 
             while($row = mysqli_fetch_array($select_image)) {
@@ -103,3 +123,13 @@
     </div>
 </form>
     
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<?php include 'includes/admin_footer.php'?> 
