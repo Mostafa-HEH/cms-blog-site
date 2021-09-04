@@ -1,6 +1,5 @@
 <div class="col-md-4">
                 <!-- Blog Search Well -->
-             
                 <div class="well">
                     <h4>Blog Search</h4>
                     <form action="search.php" method="POST">
@@ -15,6 +14,22 @@
                     </form>
                     <!-- /.input-group -->
                 </div>
+                <div class="well">
+                    <h4>You have account</h4>
+                    <form action="includes/login.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username"  placeholder="username">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" class="form-control" name="password" placeholder="password">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit" name="submit_form" >Login</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.input-group -->
+                </div>
+            
 
                 <!-- Blog Categories Well -->
                 <div class="well">
